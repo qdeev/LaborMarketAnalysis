@@ -1,0 +1,41 @@
+# Local environments and caches
+.venv/
+site/backend/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Frontend dependencies and build artifacts
+node_modules/
+site/frontend/node_modules/
+dist/
+site/frontend/dist/
+*.tsbuildinfo
+
+# Notebook and training caches
+.ipynb_checkpoints/
+src/notebooks/catboost_info/
+
+# Editor and agent-local state
+.vscode/
+.codex/
+.agents/
+
+# Excluded project materials
+docs/
+additionals/
+data/raw/
+data/info/
+scripts/smoke_*.py
+
+# Processed data: keep only compact runtime artifacts
+data/processed/*
+!data/processed/ml_broad_monthly_salary_dataset.parquet
+!data/processed/ml_broad_quarterly_salary_dataset.parquet
+!data/processed/broad_monthly_modeling_setup.json
+!data/processed/broad_quarterly_modeling_setup.json
+
+# Models: keep only final runtime models
+models/*
+!models/catboost_broad_monthly_residual_salary_model.cbm
+!models/catboost_broad_quarterly_residual_salary_model.cbm
