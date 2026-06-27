@@ -1,6 +1,6 @@
 # LaborMarketAnalysis
 
-Финальный проект по курсу Big Data в Samsung Academy при Курском государственном университете.
+Проект по курсу Big Data в Samsung Academy при Курском государственном университете.
 
 Проект посвящен анализу вакансий и прогнозированию медианной зарплаты по сегментам рынка труда. Сегмент задается регионом, профессиональной группой и временным периодом. В проекте есть полный пайплайн подготовки данных, обучение CatBoost-моделей, backtesting и веб-интерфейс для просмотра аналитики и прогнозов.
 
@@ -77,11 +77,6 @@ prediction = current_median_salary_mid * exp(predicted_log_delta)
 quarterly residual CatBoost + q4_to_q1_min_catboost_baseline
 ```
 
-Для перехода из IV квартала в I квартал используется защитная стратегия:
-
-```text
-prediction = min(catboost_prediction, baseline_prediction)
-```
 
 ## Результаты
 
@@ -170,16 +165,6 @@ python scripts/backtest_broad_quarterly_residual_catboost.py
 - таблицу истории выбранного сегмента.
 
 Frontend написан на React/Vite, backend на FastAPI. Backend читает parquet через DuckDB и выполняет инференс CatBoost-моделей.
-
-## Деплой
-
-Рекомендуемый бесплатный вариант:
-
-- frontend: Vercel;
-- backend: Render Free;
-- данные и модели: в репозитории или во внешнем хранилище, если размер артефактов увеличится.
-
-Для деплоя нужно заменить локальный API URL `http://127.0.0.1:8000/api` во frontend на публичный URL backend.
 
 ## Ограничения
 
