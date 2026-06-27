@@ -11,6 +11,8 @@ site/frontend/node_modules/
 dist/
 site/frontend/dist/
 *.tsbuildinfo
+site/frontend/vite.config.js
+site/frontend/vite.config.d.ts
 
 # Notebook and training caches
 .ipynb_checkpoints/
@@ -20,6 +22,7 @@ src/notebooks/catboost_info/
 .vscode/
 .codex/
 .agents/
+design-qa.md
 
 # Excluded project materials
 docs/
